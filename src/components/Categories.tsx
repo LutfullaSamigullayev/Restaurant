@@ -1,30 +1,33 @@
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import {
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCart } from "../redux/slices/cartOpenSlice";
 import { AppDispatch, RootState } from "../redux/store";
-import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
-import { IconButton, Typography } from "@mui/material";
+import { toggleList } from "../redux/slices/listOpenSlice";
 import CancelIcon from "@mui/icons-material/Cancel";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 
-export default function Cart() {
+export default function Categories() {
   const dispatch = useDispatch<AppDispatch>();
-  const isCartOpen = useSelector((state: RootState) => state.cart.isCartOpen);
+  const isListOpen = useSelector((state: RootState) => state.list.isListOpen);
 
   const toggleDrawer = () => {
-    dispatch(toggleCart());
+    dispatch(toggleList());
   };
 
   return (
-    <Drawer anchor="right" open={isCartOpen} onClose={toggleDrawer}>
+    <Drawer anchor="left" open={isListOpen} onClose={toggleDrawer}>
       <Box sx={{ width: 250 }} role="presentation">
         <Box
           sx={{
@@ -45,7 +48,7 @@ export default function Cart() {
           >
             <RestaurantMenuIcon />
             <Typography variant="h6" noWrap component="div">
-              5Items
+              5 Items
             </Typography>
           </Box>
           <IconButton

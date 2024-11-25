@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type TStateSlice = {
+type CStateSlice = {
   isCartOpen: boolean;
 };
 
-const initialState: TStateSlice = {
+const initialState: CStateSlice = {
   isCartOpen: false,
 };
 
@@ -12,7 +12,7 @@ export const cartOpenSlice = createSlice({
   name: "state",
   initialState,
   reducers: {
-    toggleCart: (state: TStateSlice) => {
+    toggleCart: (state: CStateSlice) => {
       state.isCartOpen = !state.isCartOpen;
     },
   },
