@@ -1,13 +1,13 @@
 import { cartOpenSlice } from "./slices/cartOpenSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
-import localStorage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import { listOpenSlice } from "./slices/listOpenSlice";
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
   key: "root",
-  storage: localStorage,
+  storage,
   whiteList: [],
   blackList: ["cart", "list"],
 };
@@ -21,6 +21,12 @@ const persistedReducer = persistReducer(persistConfig, combinedReducers);
 
 export const store = configureStore({
   reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"], // Ignore redux-persist actions
+      },
+    }),
 });
 
 export const persistor = persistStore(store);
