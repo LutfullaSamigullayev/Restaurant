@@ -1,80 +1,54 @@
-import {
-  Box,
-  Divider,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
-import { toggleList } from "../redux/slices/listOpenSlice";
-import CancelIcon from "@mui/icons-material/Cancel";
-import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import MenuList from "@mui/material/MenuList";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Typography from "@mui/material/Typography";
+import ContentCut from "@mui/icons-material/ContentCut";
+import ContentCopy from "@mui/icons-material/ContentCopy";
+import ContentPaste from "@mui/icons-material/ContentPaste";
+import Cloud from "@mui/icons-material/Cloud";
 
-export default function Categories() {
-  const dispatch = useDispatch<AppDispatch>();
-  const isListOpen = useSelector((state: RootState) => state.list.isListOpen);
-
-  const toggleDrawer = () => {
-    dispatch(toggleList());
-  };
-
+export default function IconMenu() {
   return (
-    <Drawer anchor="left" open={isListOpen} onClose={toggleDrawer}>
-      <Box sx={{ width: 250 }} role="presentation">
-        <Box
-          sx={{
-            display: "flex",
-            gap: 1,
-            alignItems: "center",
-            justifyContent: "space-between",
-            paddingLeft: "10px",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              gap: 1,
-              alignItems: "center",
-              paddingRight: 1,
-            }}
-          >
-            <RestaurantMenuIcon />
-            <Typography variant="h6" noWrap component="div">
-              5 Items
-            </Typography>
-          </Box>
-          <IconButton
-            size="large"
-            aria-label="show 4 new mails"
-            color="inherit"
-            onClick={toggleDrawer}
-          >
-            <CancelIcon />
-          </IconButton>
-        </Box>
-
+    <Paper sx={{ width: 280, maxWidth: "100%" }}>
+      <MenuList>
+        <MenuItem>
+          <ListItemIcon>
+            <ContentCut fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Cut</ListItemText>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            ⌘X
+          </Typography>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <ContentCopy fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Copy</ListItemText>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            ⌘C
+          </Typography>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <ContentPaste fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Paste</ListItemText>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            ⌘V
+          </Typography>
+        </MenuItem>
         <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-    </Drawer>
+        <MenuItem>
+          <ListItemIcon>
+            <Cloud fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Web Clipboard</ListItemText>
+        </MenuItem>
+      </MenuList>
+    </Paper>
   );
 }
