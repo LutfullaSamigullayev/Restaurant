@@ -57,6 +57,30 @@ export const Icons = {
       </g>
     </svg>
   ),
+  cart2: (props: IconProps) => (
+    <svg width="14" height="16" viewBox="0 0 12.686 16" {...props}>
+      <g transform="translate(-27.023 -2)">
+        <g transform="translate(27.023 5.156)">
+          <g>
+            <path
+              d="M65.7,111.043l-.714-9A1.125,1.125,0,0,0,63.871,101H62.459V103.1a.469.469,0,1,1-.937,0V101H57.211V103.1a.469.469,0,1,1-.937,0V101H54.862a1.125,1.125,0,0,0-1.117,1.033l-.715,9.006a2.605,2.605,0,0,0,2.6,2.8H63.1a2.605,2.605,0,0,0,2.6-2.806Zm-4.224-4.585-2.424,2.424a.468.468,0,0,1-.663,0l-1.136-1.136a.469.469,0,0,1,.663-.663l.8.8,2.092-2.092a.469.469,0,1,1,.663.663Z"
+              transform="translate(-53.023 -101.005)"
+              fill="currentColor"
+            ></path>
+          </g>
+        </g>
+        <g transform="translate(30.274 2)">
+          <g>
+            <path
+              d="M160.132,0a3.1,3.1,0,0,0-3.093,3.093v.063h.937V3.093a2.155,2.155,0,1,1,4.311,0v.063h.937V3.093A3.1,3.1,0,0,0,160.132,0Z"
+              transform="translate(-157.039)"
+              fill="currentColor"
+            ></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+  ),
   carttrolley: (props: IconProps) => (
     <svg
       fill="#000000"
@@ -219,7 +243,7 @@ export const Icons = {
       />
     </svg>
   ),
-  beef: () => (
+  beef: (props: IconProps) => (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
@@ -227,10 +251,12 @@ export const Icons = {
       height="20"
       viewBox="0 0 1280.000000 1068.000000"
       preserveAspectRatio="xMidYMid meet"
+      {...props}
     >
       <g
         transform="translate(0.000000,1068.000000) scale(0.100000,-0.100000)"
-        fill="currentColor"
+        // fill="currentColor"
+        fill="#009F7F"
         stroke="none"
       >
         <path
@@ -272,7 +298,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  lamb: () => (
+  lamb: (props: IconProps) => (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
@@ -280,10 +306,12 @@ export const Icons = {
       height="20px"
       viewBox="0 0 1280.000000 876.000000"
       preserveAspectRatio="xMidYMid meet"
+      {...props}
     >
       <g
         transform="translate(0.000000,876.000000) scale(0.100000,-0.100000)"
-        fill="currentColor"
+        // fill="currentColor"
+        fill="#009F7F"
         stroke="none"
       >
         <path
@@ -312,7 +340,7 @@ l-55 -49 -123 11 -124 11 -48 61 c-67 85 -132 138 -225 185 -138 68 -276 85
       </g>
     </svg>
   ),
-  chicken: () => (
+  chicken: (props: IconProps) => (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
@@ -320,10 +348,12 @@ l-55 -49 -123 11 -124 11 -48 61 c-67 85 -132 138 -225 185 -138 68 -276 85
       height="20"
       viewBox="0 0 926.000000 1280.000000"
       preserveAspectRatio="xMidYMid meet"
+      {...props}
     >
       <g
         transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-        fill="currentColor"
+        // fill="currentColor"
+        fill="#009F7F"
         stroke="none"
       >
         <path
@@ -405,7 +435,7 @@ l-55 -49 -123 11 -124 11 -48 61 c-67 85 -132 138 -225 185 -138 68 -276 85
       </g>
     </svg>
   ),
-  fish: () => (
+  fish: (props: IconProps) => (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
@@ -413,10 +443,12 @@ l-55 -49 -123 11 -124 11 -48 61 c-67 85 -132 138 -225 185 -138 68 -276 85
       height="20"
       viewBox="0 0 1280.000000 714.000000"
       preserveAspectRatio="xMidYMid meet"
+      {...props}
     >
       <g
         transform="translate(0.000000,714.000000) scale(0.100000,-0.100000)"
-        fill="currentColor"
+        // fill="currentColor"
+        fill="#009F7F"
         stroke="none"
       >
         <path
@@ -468,17 +500,19 @@ l-55 -49 -123 11 -124 11 -48 61 c-67 85 -132 138 -225 185 -138 68 -276 85
       </g>
     </svg>
   ),
-  fastfood: () => (
+  fastfood: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="20"
       viewBox="0 0 24 24"
       id="fastfood"
+      {...props}
     >
       <path fill="none" d="M0 0h24v24H0V0z"></path>
       <path
-        fill="currentColor"
+        // fill="currentColor"
+        fill="#009F7F"
         d="M21.9 5H18V2c0-.55-.45-1-1-1s-1 .45-1 1v3h-3.9c-.59 0-1.05.51-1 1.1l.12 1.21C14.9 8.16 18 10.77 18 15l.02 8h1.7c.84 0 1.53-.65 1.63-1.47L22.89 6.1c.06-.59-.4-1.1-.99-1.1zM15 21H2c-.55 0-1 .45-1 1s.45 1 1 1h13c.55 0 1-.45 1-1s-.45-1-1-1zM2.1 15h12.8c.62 0 1.11-.56.99-1.16-.65-3.23-4.02-4.85-7.39-4.85s-6.73 1.62-7.39 4.85c-.12.6.38 1.16.99 1.16zM15 17H2c-.55 0-1 .45-1 1s.45 1 1 1h13c.55 0 1-.45 1-1s-.45-1-1-1z"
       ></path>
     </svg>

@@ -21,3 +21,7 @@ export interface ProductItem {
 export interface MenuState {
   selectedKey: string;
 }
+
+export interface CartItem extends ProductItem {
+  quantity: number
+}

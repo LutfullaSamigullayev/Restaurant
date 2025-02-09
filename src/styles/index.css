@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #009F7F;
+  --color-secondary: #9333EA;
+}
+
+/* :root {
+  --primary-color: #009F7F;
+  --secondary-color: #9333EA;
+} */
+
 html,
 body,
 #root {

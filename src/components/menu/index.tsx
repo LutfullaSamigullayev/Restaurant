@@ -62,8 +62,8 @@ export const MenuFood = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-y-1 py-2  w-fit h-full">
-        <Button type="text" onClick={toggleCollapsed} className="flex items-center justify-center gap-x-2 rounded-full shadow-md">
+    <div className="flex flex-col gap-y-1 py-2  w-fit h-full ">
+        <Button type="text"  onClick={toggleCollapsed} className="flex items-center justify-center gap-x-2 rounded-full shadow-md">
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           {!collapsed && "Menuni yopish"}
         </Button>
@@ -77,6 +77,7 @@ export const MenuFood = () => {
         }))}
         selectedKeys={[selectedKey]}
         onClick={handleMenuClick}
+        className="bg-red-500"
 />
     </div>
   );

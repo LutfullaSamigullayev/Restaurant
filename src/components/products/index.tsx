@@ -4,6 +4,7 @@ import { CardProduct, SearchInput } from "./components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { useEffect, useState } from "react";
+import { ProductItem } from "@/types";
 
 const fetchProducts = async () => {
   const { data } = await Axios.get("/products");
@@ -39,13 +40,15 @@ export const Products = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading products</div>;
 
+
+
   return (
     <div>
       <SearchInput query={query} onQueryChange={handleQueryChange} />
       <ul className="flex flex-wrap">
-        {filteredProducts.map((product: any) => (
+        {filteredProducts.map((product: ProductItem) => (
           <li key={product.id}>
-            <CardProduct {...product} />
+            <CardProduct {...product}  />
           </li>
         ))}
       </ul>

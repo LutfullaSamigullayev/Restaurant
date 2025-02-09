@@ -1,4 +1,4 @@
-import { Header, MenuFood, Products } from "./components";
+import { CartModal, Header, MenuFood, Products } from "./components";
 
 const App = () => {
   
@@ -10,6 +10,7 @@ const App = () => {
       <Products />
     
       </div>
+      <CartModal />
     </div>
   );
 };
