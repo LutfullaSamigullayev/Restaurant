@@ -45,7 +45,7 @@ export const Products = () => {
   return (
     <div>
       <SearchInput query={query} onQueryChange={handleQueryChange} />
-      <ul className="flex flex-wrap">
+      <ul className="flex flex-wrap gap-8">
         {filteredProducts.map((product: ProductItem) => (
           <li key={product.id}>
             <CardProduct {...product}  />

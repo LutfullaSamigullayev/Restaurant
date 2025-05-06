@@ -26,7 +26,7 @@ export const MenuFood = () => {
     {
       id: 1,
       key: "all",
-      icon: <Icons.beef />,
+      icon: <Icons.alleat2 />,
       label: "Hammasi",
     },
     {
@@ -73,7 +73,7 @@ export const MenuFood = () => {
         inlineCollapsed={collapsed}
         items={items.map(item => ({
           ...item,
-          icon: <div className="flex justify-center items-center">{item.icon}</div>
+          icon: <div className=" flex justify-center items-center">{item.icon}</div>
         }))}
         selectedKeys={[selectedKey]}
         onClick={handleMenuClick}

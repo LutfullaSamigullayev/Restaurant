@@ -48,7 +48,7 @@ export const CartModal = () => {
         </div>
       </div>
       <Drawer
-        className="relative"
+        className="cart_body"
         title={
           <div className="flex justify-between items-center w-full">
             <span>Shopping Cart</span>
@@ -63,29 +63,43 @@ export const CartModal = () => {
         onClose={onClose}
         open={open}
       >
-        <div>
-          <ul>
-            {cartData.map((product: CartItem) => (
-              <li key={product.id}>
-                <CartProduct {...product} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div
-          className="w-full h-10 bg-primary rounded-full"
-          onClick={showChildrenDrawer}
-        >
-          Two-level drawer
+        <div className="">
+          <div
+            className=" overflow-y-auto pt-2 px-4"
+            style={{ maxHeight: "calc(92vh - 56px)" }}
+          >
+            <ul>
+              {cartData.map((product: CartItem) => (
+                <li key={product.id}>
+                  <CartProduct {...product} />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div
+            className="w-full h-14 fixed bottom-0"
+            onClick={showChildrenDrawer}
+          >
+            <div className="w-[500px] h-full px-4 py-2 flex justify-center items-center ">
+              <button className="w-full h-full flex items-center justify-between p-1 pl-4 font-bold bg-primary rounded-full">
+                <span className="text-white">Continue to Payment</span>
+                <span className="flex items-center h-full px-2 rounded-full bg-white text-primary">
+                  95000
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
         <Drawer
-          title="Two-level Drawer"
-          width={320}
+          title="Buyurtma berish"
+          width={520}
           closable={false}
           onClose={onChildrenDrawerClose}
           open={childrenDrawer}
         >
-          This is two-level drawer
+
+          {/* <Payment /> */}
+              Bu yerda to'lov qismi bo'ladi
         </Drawer>
       </Drawer>
     </>
